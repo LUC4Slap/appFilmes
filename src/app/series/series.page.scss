@@ -1,0 +1,22 @@
+img {
+  width: 100%;
+  height: auto;
+}
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+.pesquisa {
+  display: flex;
+  flex-direction: row;
+  .pesquisaInput {
+    width: 80%;
+  }
+}
+
+.buttons {
+    display: flex;
+    margin-left: -7px;
+    padding: 13px;
+    justify-content: space-between;
+  }

@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Atores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="pesquisa container mt-2">
+    <div class="pesquisaInput">
+      <input class="form-control" type="text" name="pesquisa" id="pesquisa" [(ngModel)]="pesquisa">
+    </div>
+    <button class="btn btn-primary ml-2" (click)="pesquisar()">Pesquisar</button>
+  </div>
+  <ion-card *ngFor="let ator of atores">
+    <ion-card-header>
+      <img class="img-fluid" src={{linkImagem+ator.profile_path}} alt={{ator.title}}>
+      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+      <ion-card-title>{{ ator.name }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>Conhecido por: {{ ator.known_for[1].title }}</p>
+      <p>{{ ator.known_for[0].overview }}</p>
+      <span> <strong>Nota:</strong> {{ ator.known_for[0].vote_average }} </span>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

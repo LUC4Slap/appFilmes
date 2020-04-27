@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card  *ngFor="let filme of favoritos">
+    <ion-card-header>
+      <img class="img-fluid" src={{linkImagem+filme.poster_path}} alt={{filme.title}}>
+      <ion-card-title>{{ filme.title }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ filme.overview }}
+      <p>Nota: {{ filme.vote_average }}</p>
+    </ion-card-content>
+    <button class="btn btn-danger m-3" (click)="remover(filme)">Remover</button>
+    <button class="btn btn-primary m-3" (click)="buscarTrailer(filme)">Reproduzir Trailer</button>
+    <div id={{filme.id}}></div>
+    <div *ngIf="mostrarTrailer" class="d-flex align-items-center">
+      <button class="btn btn-danger m-3 w-100" (click)="fecharTrailer(filme.id)">Fechar Trailer</button>
+    </div>
+  </ion-card>
+</ion-content>
