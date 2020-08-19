@@ -23,7 +23,6 @@ export class AtoresPage implements OnInit {
   async chamaApi(url) {
     let dados = await axios.get(url);
     this.atores = dados.data.results;
-    console.log(this.atores);
   }
 
   async pesquisar() {

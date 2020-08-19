@@ -32,11 +32,11 @@ export class AppComponent implements OnInit {
       url: 'atores',
       icon: 'people'
     },
-    // {
-    //   title: 'Trash',
-    //   url: '/folder/Trash',
-    //   icon: 'trash'
-    // },
+    {
+      title: 'Videos',
+      url: 'videos',
+      icon: 'videocam'
+    },
     // {
     //   title: 'Spam',
     //   url: '/folder/Spam',
